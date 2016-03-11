@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
     <selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:state_enabled="false" android:drawable="@drawable/button_num_disabled"/>
-
-    <item android:state_enabled="true" android:drawable="@drawable/button_num_pressed" android:state_pressed="true"/>
-
-    <item android:state_enabled="true" android:drawable="@drawable/button_num_focused" android:state_focused="true"/>
-
-    <item android:state_enabled="true" android:drawable="@drawable/button_num_enabled"/>
-
-</selector>
+        <item android:state_enabled="false" android:drawable="@drawable/button_num_disabled"/>
+        <item android:state_enabled="true" android:drawable="@drawable/button_num_pressed" android:state_pressed="true"/>
+        <item android:state_enabled="true" android:drawable="@drawable/button_num_focused" android:state_focused="true"/>
+        <item android:state_enabled="true" android:drawable="@drawable/button_num_enabled"/>
+    </selector>

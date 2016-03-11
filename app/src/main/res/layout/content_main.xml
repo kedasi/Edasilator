@@ -16,66 +16,64 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="#FCE4EC"
-
         android:orientation="vertical"
         >
 
         <TextView
             android:id="@+id/textViewCalc"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:textColor="#000000"
-            android:text="Siia võiks tulla arvutamine"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:layout_alignParentTop="true" />
-
-
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:textColor="#880E4F"
+            android:textAlignment="textEnd"
+            android:paddingBottom="10dp"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:textSize="60sp"
+            android:layout_alignParentTop="true"
+            android:layoutDirection="ltr"
+            android:ellipsize="start"
+            android:textIsSelectable="true"
+            />
 
     </RelativeLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="0dp">
-    <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/textViewCalc"
-android:background="#F06292"
-        android:id="@+id/numbersLayout"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_gravity="left"
-        android:layout_weight="1">
+        android:orientation="horizontal"
+        android:padding="0dp">
+            <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/textViewCalc"
+            android:background="#F06292"
+            android:id="@+id/numbersLayout"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_gravity="left"
+            android:layout_weight="1">
 
         <Button
             android:id="@+id/button7"
-style="@style/btnNum"
+            style="@style/btnNum"
             android:onClick="buttonClicked"
             android:text="7"
-
             app:layout_heightPercent="25%"
             app:layout_widthPercent="33%" />
 
         <Button
             android:id="@+id/button8"
-
             style="@style/btnNum"
             android:layout_toRightOf="@id/button7"
-
             android:text="8"
             app:layout_heightPercent="25%"
             app:layout_widthPercent="33%" />
 
         <Button
             android:id="@+id/button9"
-
             style="@style/btnNum"
             android:layout_toRightOf="@id/button8"
-
             android:text="9"
             app:layout_heightPercent="25%"
             app:layout_widthPercent="33%" />
@@ -85,7 +83,6 @@ style="@style/btnNum"
             android:id="@+id/button4"
             style="@style/btnNum"
             android:layout_below="@id/button7"
-
             android:text="4"
             app:layout_heightPercent="25%"
             app:layout_widthPercent="33%"/>
@@ -95,7 +92,6 @@ style="@style/btnNum"
             style="@style/btnNum"
             android:layout_below="@id/button8"
             android:layout_toRightOf="@id/button4"
-
             android:text="5"
             app:layout_heightPercent="25%"
             app:layout_widthPercent="33%" />
@@ -104,7 +100,6 @@ style="@style/btnNum"
             style="@style/btnNum"
             android:layout_below="@id/button9"
             android:layout_toRightOf="@id/button5"
-
             android:text="6"
             app:layout_heightPercent="25%"
             app:layout_widthPercent="33%" />
@@ -113,7 +108,6 @@ style="@style/btnNum"
             android:id="@+id/button1"
             style="@style/btnNum"
             android:layout_below="@id/button4"
-
             android:text="1"
             app:layout_heightPercent="25%"
             app:layout_widthPercent="33%" />
@@ -121,7 +115,6 @@ style="@style/btnNum"
             android:id="@+id/button2"
             android:layout_toRightOf="@id/button1"
             android:layout_below="@id/button5"
-
             android:text="2"
             style="@style/btnNum"
             app:layout_heightPercent="25%"
@@ -130,18 +123,15 @@ style="@style/btnNum"
             android:id="@+id/button3"
             android:layout_toRightOf="@id/button2"
             android:layout_below="@id/button6"
-
             android:text="3"
             style="@style/btnNum"
             app:layout_heightPercent="25%"
             app:layout_widthPercent="33%" />
 
-
         <Button
             android:id="@+id/buttonDot"
             style="@style/btnNum"
             android:layout_below="@id/button1"
-
             android:text="."
             app:layout_heightPercent="25%"
             app:layout_widthPercent="33%"/>
@@ -149,16 +139,15 @@ style="@style/btnNum"
             android:id="@+id/button0"
             android:layout_toRightOf="@id/buttonDot"
             android:layout_below="@id/button2"
-
             android:text="0"
             style="@style/btnNum"
             app:layout_heightPercent="25%"
             app:layout_widthPercent="33%" />
+
         <Button
             android:id="@+id/buttonEquals"
             android:layout_toRightOf="@id/button0"
             android:layout_below="@id/button3"
-
             android:text="="
             style="@style/btnNum"
             app:layout_heightPercent="25%"
@@ -175,60 +164,54 @@ style="@style/btnNum"
         android:layout_weight="4"
         android:background="#D81B60"
         android:padding="0dp"
-
         android:layout_alignTop="@id/textViewCalc"
-
         android:id="@+id/calcBtns">
         <Button
             android:id="@+id/buttonDel"
-style="@style/btnCalc"
+            style="@style/btnCalc"
             android:layout_alignTop="@id/button9"
             android:layout_alignParentRight="true"
-
             android:text="DEL"
             app:layout_heightPercent="20%"
             android:layout_width="wrap_content" />
-    <Button
-        android:id="@+id/buttonDiv"
-        style="@style/btnCalc"
-        android:layout_below="@id/buttonDel"
-        android:layout_alignParentRight="true"
-
-        android:text="/"
-        android:layout_width="wrap_content"
-        app:layout_heightPercent="20%" />
-    <Button
-        android:id="@+id/buttonMult"
-        style="@style/btnCalc"
-        android:layout_below="@id/buttonDiv"
-        android:layout_alignParentRight="true"
-
-        android:layout_width="wrap_content"
-        android:text="*"
-        app:layout_heightPercent="20%"
+        <Button
+            android:id="@+id/buttonDiv"
+            style="@style/btnCalc"
+            android:layout_below="@id/buttonDel"
+            android:layout_alignParentRight="true"
+            android:text="/"
+            android:layout_width="wrap_content"
+            app:layout_heightPercent="20%" />
+        <Button
+            android:id="@+id/buttonMult"
+            style="@style/btnCalc"
+            android:layout_below="@id/buttonDiv"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:text="*"
+            app:layout_heightPercent="20%"
        />
 
-
-    <Button
-        android:id="@+id/buttonSub"
-        style="@style/btnCalc"
-        android:layout_below="@id/buttonMult"
-        android:layout_alignParentRight="true"
-
-        android:layout_width="wrap_content"
-        android:text="-"
-        app:layout_heightPercent="20%"
+        <Button
+            android:id="@+id/buttonSub"
+            style="@style/btnCalc"
+            android:layout_below="@id/buttonMult"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:text="-"
+            app:layout_heightPercent="20%"
          />
-    <Button
-        android:id="@+id/buttonAdd"
-        style="@style/btnCalc"
-        android:layout_below="@id/buttonSub"
-        android:layout_alignParentRight="true"
 
-        android:layout_width="wrap_content"
-        android:text="+"
-        app:layout_heightPercent="20%"
+        <Button
+            android:id="@+id/buttonAdd"
+            style="@style/btnCalc"
+            android:layout_below="@id/buttonSub"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:text="+"
+            app:layout_heightPercent="20%"
          />
     </android.support.percent.PercentRelativeLayout>
 </LinearLayout>
+
 </LinearLayout>

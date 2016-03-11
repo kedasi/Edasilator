@@ -17,6 +17,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets { main { res.srcDirs = ['src/main/res'] } }
 }
 
 dependencies {
@@ -25,5 +26,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
     compile 'com.android.support:percent:23.2.0'
+    compile 'net.objecthunter:exp4j:0.4.4'
 
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }
