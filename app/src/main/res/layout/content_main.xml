@@ -23,17 +23,17 @@
             android:id="@+id/textViewCalc"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="bottom"
+            android:gravity="right|bottom"
             android:textColor="#880E4F"
-            android:textAlignment="textEnd"
+            android:textAlignment="viewEnd"
             android:paddingBottom="10dp"
             android:paddingLeft="7dp"
             android:paddingRight="7dp"
             android:textSize="60sp"
             android:layout_alignParentTop="true"
-            android:layoutDirection="ltr"
             android:ellipsize="start"
             android:textIsSelectable="true"
+
             />
 
     </RelativeLayout>

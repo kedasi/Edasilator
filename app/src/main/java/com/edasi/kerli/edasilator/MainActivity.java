@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -38,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         if (BuildConfig.DEBUG) {
             Log.d(TAG, "onCreate called");
         }
@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         calcField = (TextView) findViewById(R.id.textViewCalc);
         Typeface tf = Typeface.createFromAsset(getAssets(), "digital-7.ttf");
         calcField.setTypeface(tf);
+
+        calcField.setTextDirection(View.TEXT_DIRECTION_ANY_RTL);
 
         if (savedInstanceState != null) {
             calcField.setText( savedInstanceState.getString("calcV", calcField.toString()));
@@ -74,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
                     calcField.setText(btn.getText()); //muuda buttoni tekst ekraanitekstiks
                     stateErr = false; //ekraaniseis täidetud
                 } else {  //kui ekraanile on midagi kirjutatud
+                    calcField.setGravity(Gravity.BOTTOM | Gravity.RIGHT);
+
                     calcField.append(btn.getText()); //lisa ekraanil olevale tekstile buttoni sisu juurde
                 }
                 lastNum = true; //ekraanil viimane sisestus on number
@@ -94,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     calcField.append(btn.getText()); //lisa ekraanile buttoni sisu
                     lastNum = false; //enam pole viimane sisestus number
                     lastDot = false; //numbris pole punkti
-                }
+                } 
             }
         };
         for (int x : opBtns) {
@@ -139,6 +143,8 @@ public class MainActivity extends AppCompatActivity {
                 double result = expression.evaluate();
                 calcField.setText(Double.toString(result));
                 lastDot = true; //numbris on punkt
+               // calcField.setTextAlignment();
+
             } catch (ArithmeticException ex) {
                 // kui on vale sisend
                 calcField.setText("Error");
