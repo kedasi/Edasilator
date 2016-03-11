@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean lastNum; //viimane number
     private boolean stateErr; //ekraaniseis, kas ekraanil on midagi
     private boolean lastDot; // viimane punkt
+    private boolean minus;
     private static final String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                     calcField.append(btn.getText()); //lisa ekraanile buttoni sisu
                     lastNum = false; //enam pole viimane sisestus number
                     lastDot = false; //numbris pole punkti
-                } 
+                }
             }
         };
         for (int x : opBtns) {
@@ -111,6 +112,24 @@ public class MainActivity extends AppCompatActivity {
                     calcField.append("."); //lisa ekraanile punkt
                     lastNum = false; //viimane sisestus pole number
                     lastDot = true; //numbris on punkt
+                }
+            }
+        });
+        findViewById(R.id.buttonSub).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    minus = false;
+                if (!minus) {
+                    calcField.append("-");
+                    lastNum = false;
+                    minus = true; //viimane sisestus pole number
+                    //numbris on punkt
+                }
+                  if (lastNum && minus) {
+                    Button btn = (Button) v;
+                    calcField.append(btn.getText()); //lisa ekraanile buttoni sisu
+                    lastNum = false; //enam pole viimane sisestus number
+
                 }
             }
         });
